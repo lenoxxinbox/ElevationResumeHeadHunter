@@ -14,4 +14,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          start: npx cypress run --browser chrome --record --key 55405224-7006-43f8-9de0-a62debb72439
+          start: npx cypress run --record --key 55405224-7006-43f8-9de0-a62debb72439 --browser chrome
