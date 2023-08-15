@@ -1,0 +1,13 @@
+{
+    "invite": "[data-qa=login]",
+    "toPass": "[data-qa=expand-login-by-password]",
+    "email": "[data-qa=login-input-username]",
+    "pass": "[data-qa=login-input-password]",
+    "logInButton": "[data-qa=account-login-submit]",
+    "myResumeMenu": "[data-qa=\"mainmenu_myResumes\"]",
+    "doneText": "Готово, вы&nbsp;подняли резюме",
+    "ok": "Закрыть",
+    "finalText": "[data-qa=\"resume-update-button_actions\"] > span",
+    "raiseInSearchText": "Поднять в поиске",
+    "modalWindow": ".bloko-modal-title"
+}
