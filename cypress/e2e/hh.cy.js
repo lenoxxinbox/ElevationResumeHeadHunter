@@ -1,5 +1,9 @@
 import element from '../fixtures/elements.json'
 
+
+const email = Cypress.env('CYPRESS_LOGIN');
+const password = Cypress.env('CYPRESS_PASSWORD');
+
 describe('MyResume', () => {
   
   beforeEach(() => {
@@ -8,9 +12,6 @@ describe('MyResume', () => {
 
   it('successful resume raising', () => {
 
-    const email = Cypress.env('CYPRESS_LOGIN');
-    const password = Cypress.env('CYPRESS_PASSWORD');
-    
     cy.login(email, password);    
     cy.get(element.myResumeMenu).should('be.visible').click();
     cy.contains(element.raiseInSearchText).should('be.visible').click();
