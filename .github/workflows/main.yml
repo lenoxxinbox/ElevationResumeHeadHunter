@@ -16,7 +16,6 @@ jobs:
         with:
           start: npx cypress run
           browser: chrome
-          record: true
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         if: always()
