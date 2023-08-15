@@ -17,8 +17,6 @@ jobs:
           start: npx cypress run --record
           browser: chrome
           record: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         if: always()
