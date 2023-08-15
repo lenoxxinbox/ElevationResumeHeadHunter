@@ -23,6 +23,4 @@ jobs:
         if: always()
         with:
           name: artifacts
-          path: |
-            cypress/videos/
-            cypress/screenshots/
+          path: cypress/artifacts/
