@@ -1,4 +1,3 @@
-import data from '../fixtures/login.json'
 import element from '../fixtures/elements.json'
 
 describe('MyResume', () => {
@@ -9,8 +8,10 @@ describe('MyResume', () => {
 
   it('successful resume raising', () => {
 
-
-    cy.login(data.email, data.password);    
+    const email = Cypress.env('CYPRESS_LOGIN');
+    const password = Cypress.env('CYPRESS_PASSWORD');
+    
+    cy.login(email, password);    
     cy.get(element.myResumeMenu).should('be.visible').click();
     cy.contains(element.raiseInSearchText).should('be.visible').click();
     cy.get(element.modalWindow).should('be.visible');
