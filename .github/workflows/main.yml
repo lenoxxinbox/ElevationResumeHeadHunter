@@ -15,3 +15,11 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           start: npx cypress run --record --key 55405224-7006-43f8-9de0-a62debb72439 --browser chrome
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: artifacts
+          path: |
+            cypress/videos/
+            cypress/screenshots/
