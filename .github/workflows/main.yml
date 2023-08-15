@@ -14,7 +14,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          start: npx cypress run
+          start: npx cypress run --record
           browser: chrome
           record: true
         env:
