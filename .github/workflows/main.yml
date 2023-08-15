@@ -1,0 +1,25 @@
+name: Cypress CI
+on:
+  schedule:
+    - cron: '2 */4 * * *'
+  push:
+    branches:
+      - main
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          start: npx cypress run --record --key 55405224-7006-43f8-9de0-a62debb72439 --browser chrome
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: artifacts
+          path: |
+            cypress/videos/
+            cypress/screenshots/
