@@ -1,6 +1,6 @@
 {
     "invite": "[data-qa=login]",
-    "toPass": "[data-qa=expand-login-by-password]",
+    "toPass": "[data-qa=\"expand-login-by-password\"]",
     "email": "[data-qa=login-input-username]",
     "pass": "[data-qa=login-input-password]",
     "logInButton": "[data-qa=account-login-submit]",
