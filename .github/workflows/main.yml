@@ -11,15 +11,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Cypress run
-          run: |
-            echo '${{ secrets.CYPRESS_LOGIN }}'
-            echo '${{ secrets.CYPRESS_PASSWORD }}'
+
+      - name: Cypress run        
         uses: cypress-io/github-action@v5
         with:
           start: npx cypress run --browser chrome
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+          run: |
+            echo '${{ secrets.CYPRESS_LOGIN }}'
+            echo '${{ secrets.CYPRESS_PASSWORD }}'
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         if: always()
