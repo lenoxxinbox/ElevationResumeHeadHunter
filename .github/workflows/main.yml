@@ -14,7 +14,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          start: npx cypress run --record -- browser chrome
+          start: npx cypress run --browser chrome
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       - name: Upload artifacts
