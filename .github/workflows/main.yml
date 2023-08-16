@@ -12,6 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Cypress run
+          run: |
+            echo '${{ secrets.CYPRESS_LOGIN }}'
+            echo '${{ secrets.CYPRESS_PASSWORD }}'
         uses: cypress-io/github-action@v5
         with:
           start: npx cypress run --browser chrome
