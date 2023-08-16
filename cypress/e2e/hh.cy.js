@@ -1,8 +1,8 @@
 import element from '../fixtures/elements.json'
 
 
-const email = Cypress.env('CYPRESS_LOGIN');
-const password = Cypress.env('CYPRESS_PASSWORD');
+const email = env('CYPRESS_LOGIN');
+const password = env('CYPRESS_PASSWORD');
 
 describe('MyResume', () => {
   
