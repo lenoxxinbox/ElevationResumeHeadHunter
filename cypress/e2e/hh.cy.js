@@ -11,9 +11,15 @@ describe('MyResume', () => {
   })
 
   it('successful resume raising', () => {
-
-    cy.login(email, password);
+    expect(Cypress.env())
+      .to.be.an('object')
+      .and.to.include.keys('email', 'password');
+    cy.log('**email:** ' + Cypress.env('email'))
+    cy.log('**password:** ' + Cypress.env('password'))
+    
+    cy.login(Cypress.env('email'), Cypress.env('password'));
     cy.scrollTo('top');
+    cy.screenshot('env', { capture: 'runner' })
     cy.get(element.myResumeMenu).should('be.visible').click();
     cy.contains(element.raiseInSearchText).should('be.visible');
     // cy.get(element.modalWindow).should('be.visible');
