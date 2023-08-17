@@ -3,7 +3,7 @@ import element from '../fixtures/elements.json'
 describe('MyResume', () => {
   
   beforeEach(() => {
-    cy.visit('https://volgograd.hh.ru/applicant/resumes');
+    cy.visit('https://hh.ru/applicant/resumes');
   })
 
   it('successful resume raising', () => {
