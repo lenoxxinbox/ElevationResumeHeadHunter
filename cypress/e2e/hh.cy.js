@@ -16,6 +16,7 @@ describe('MyResume', () => {
     cy.login(Cypress.env('email'), Cypress.env('password'));
     cy.scrollTo('top');
     cy.screenshot('env', { capture: 'runner' })
+    cy.wait(2000);
     // cy.visit('https://hh.ru/applicant/resumes');
     cy.contains('Мои резюме').should('be.visible').click();
     cy.contains(element.raiseInSearchText).should('be.visible');
