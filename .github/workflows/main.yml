@@ -12,6 +12,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Write the cypress.env.json file
+        run: |
+          echo '${{ secrets.CYPRESS_ENV_CI }}' > cypress.env.json
+
       - name: Cypress run        
         uses: cypress-io/github-action@v5
         with:
@@ -19,9 +23,6 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
-          run: |
-            echo '${{ secrets.CYPRESS_LOGIN }}'
-            echo '${{ secrets.CYPRESS_PASSWORD }}'
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         if: always()
