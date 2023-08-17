@@ -1,13 +1,9 @@
 import element from '../fixtures/elements.json'
 
-
-const email = Cypress.env('CYPRESS_LOGIN');
-const password = Cypress.env('CYPRESS_PASSWORD');
-
 describe('MyResume', () => {
   
   beforeEach(() => {
-    cy.visit('https://hh.ru/account/login');
+    cy.visit('https://volgograd.hh.ru/applicant/resumes');
   })
 
   it('successful resume raising', () => {
