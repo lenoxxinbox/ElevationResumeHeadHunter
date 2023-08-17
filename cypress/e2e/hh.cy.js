@@ -16,7 +16,8 @@ describe('MyResume', () => {
     cy.login(Cypress.env('email'), Cypress.env('password'));
     cy.scrollTo('top');
     cy.screenshot('env', { capture: 'runner' })
-    cy.get(element.myResumeMenu).should('be.visible').click();
+    cy.visit('https://hh.ru/applicant/resumes');
+    // cy.get(element.myResumeMenu).should('be.visible').click();
     cy.contains(element.raiseInSearchText).should('be.visible');
     cy.get(element.modalWindow).should('be.visible');
     cy.contains(element.ok).should('be.visible').click();
