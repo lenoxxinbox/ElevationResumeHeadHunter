@@ -11,7 +11,7 @@ module.exports = defineConfig({
           const width = 2400
           const height = 1500
           console.log('setting the browser window size to', width, height);
-          if (browser.name === 'chrome' && 'electron') {
+          if (browser.name === 'chrome') {
             launchOptions.args.push(`--window-size=${width},${height}`)
             launchOptions.args.push('--force-device-scale-factor=1')
           };
