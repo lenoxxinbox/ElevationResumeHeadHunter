@@ -18,7 +18,7 @@ describe('MyResume', () => {
     cy.screenshot('env', { capture: 'runner' })
     cy.wait(2000);
     // cy.visit('https://hh.ru/applicant/resumes');
-    cy.contains('Мои резюме').should('be.visible').click();
+    cy.get('[data-qa="mainmenu_myResumes"]').should('be.visible').click();
     cy.contains(element.raiseInSearchText).should('be.visible');
     cy.get(element.modalWindow).should('be.visible');
     cy.contains(element.ok).should('be.visible').click();
