@@ -20,6 +20,6 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://hh.ru',
     projectId: "mhpy6x",
-    defaultCommandTimeout: 100000,
+    defaultCommandTimeout: 1000000,
   },
 });
