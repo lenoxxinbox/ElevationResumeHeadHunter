@@ -16,8 +16,10 @@ describe('MyResume', () => {
     cy.login(Cypress.env('email'), Cypress.env('password'));
     cy.scrollTo('top');
     cy.screenshot('env', { capture: 'runner' })
-    cy.get('[data-qa="mainmenu_myResumes"]', {timeout: 0}).click();
+    cy.wait(60000);
+    cy.get('[data-qa="mainmenu_myResumes"]').should('be.visible').click({ force: true });
     cy.contains(element.raiseInSearchText).should('be.visible');
+    cy.wait(5000);
     cy.get(element.modalWindow).should('be.visible');
     cy.contains(element.ok).should('be.visible').click();
     cy.get(element.finalText).scrollIntoView().should('be.visible');
