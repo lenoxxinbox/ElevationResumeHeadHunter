@@ -19,8 +19,9 @@ describe('MyResume', () => {
     cy.wait(60000);
     cy.get('[data-qa="mainmenu_myResumes"]').should('be.visible').click({ force: true });
     cy.contains(element.raiseInSearchText).should('be.visible');
-    cy.wait(5000);
+    cy.wait(500000);
     cy.get(element.modalWindow).should('be.visible');
+    cy.wait(50000);
     cy.contains(element.ok).should('be.visible').click();
     cy.get(element.finalText).scrollIntoView().should('be.visible');
   })
