@@ -1,10 +1,10 @@
 name: Cypress CI
-on:
-  schedule:
-    - cron: '2 */4 * * *'
-  push:
-    branches:
-      - main
+# on:
+#   schedule:
+#     - cron: '2 */4 * * *'
+#   push:
+#     branches:
+#       - main
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
